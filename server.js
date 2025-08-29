@@ -7,7 +7,7 @@ import User from "./userModel.js";
 import jwt from "jsonwebtoken";
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use((req, res,next)=>{
@@ -16,7 +16,9 @@ app.use((req, res,next)=>{
   next();
 });
 
-const connection_url = "mongodb+srv://Admin:QwaS1234@tiktokapp.nvnyqks.mongodb.net/?retryWrites=true&w=majority&appName=TiktokApp";
+const connection_url = "mongodb+srv://SyedTaqi:Mmbl12345@tikkktokdb.global.mongocluster.cosmos.azure.com/?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000";
+
+// "mongodb+srv://Admin:QwaS1234@tiktokapp.nvnyqks.mongodb.net/?retryWrites=true&w=majority&appName=TiktokApp";
 
 mongoose.connect(connection_url)
   .then(() => console.log("✅ MongoDB connected"))
